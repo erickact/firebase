@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import useTweetCollection from "../hooks/useTweetCollection";
 
-import "./../style.css";
+import "../style.css";
 
 const TweetForm = () => {
   const [formState, setFormState] = useState({ tweet: "", author: "" });
 
-  // importamos el custom hook, al ejecutar la funcion,
-  // este me retorna un objeto, que al destructurarlo
-  // yo puedo sacar mi funcion
+  // importamos el custom hook, al ejecutar la funcion, este me retorna un objeto,
+  // que al destructurarlo yo puedo sacar mi funcion
   const { addNewTweet } = useTweetCollection();
+
+  // context
+  const { user } = useContext(UserContext);
 
   const handleChange = (e) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
+      author: user ? user.displayName : "Desconocido",
     });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +40,6 @@ const TweetForm = () => {
 
   return (
     <div>
-      <h1 className="title">Tweets</h1>
       <form onSubmit={handleSubmit} className="form">
         <textarea
           autoComplete="off"

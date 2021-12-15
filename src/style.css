@@ -1,3 +1,4 @@
+.App,
 .title {
   text-align: center;
 }
@@ -42,11 +43,11 @@ h2 {
 .author {
   display: flex;
   justify-content: center;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .author b {
-margin-right: 5px;
+  margin-right: 5px;
 }
 
 .tweetFooter {
@@ -59,4 +60,8 @@ margin-right: 5px;
   margin: 0 5px;
   border-radius: 5px;
   /* width: 50px; */
+}
+
+.button {
+  margin-bottom: 10px;
 }

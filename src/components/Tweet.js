@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as IconHeart } from "../assets/icons/iconHeart.svg";
 import useTweetCollection from "../hooks/useTweetCollection";
 
-import "./../style.css";
+import "../style.css";
 
 const Tweet = ({ tweetData }) => {
   const { deleteTweet, addLikes } = useTweetCollection();

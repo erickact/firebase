@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Tweet from "./Tweet";
 import useTweetCollection from "../hooks/useTweetCollection";
 
-import "./../style.css";
+import "../style.css";
 
 const ListaTweets = () => {
   const [listaTweets, setListaTweets] = useState([]);

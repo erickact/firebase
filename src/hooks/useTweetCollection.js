@@ -39,6 +39,7 @@ const useTweetCollection = () => {
       // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Patito Error adding document: ", e);
+      alert("Por favor loguearse");
     }
   };
   // delete tweets
@@ -54,7 +55,7 @@ const useTweetCollection = () => {
   // add likes
   const addLikes = async (idDocument) => {
     const docRef = doc(tweetsCollectionRef, idDocument);
-    
+
     const docSnap = await getDoc(docRef);
 
     await updateDoc(docRef, {
